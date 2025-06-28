@@ -57,12 +57,13 @@ document
       });
 
       const result = await response.json();
+      
 
       if (response.ok) {
         showSuccess(response.message || "Registration successful!");
         setTimeout(() => {
-          window.location.href = "/dashboard";
-        }, 2000);
+          window.location.href = `/user/login?msg=${encodeURIComponent(result.message)}`;
+        }, 300);
       } else {
         showError(result.message || "Registration failed. Please try again.");
       }
