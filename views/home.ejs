@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Drive</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/home.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <div class="logo">📁</div>
+            <h2>My Drive</h2>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search in Drive">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="user-section">
+            <div class="user-avatar">JD</div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <button class="new-button" onclick="document.getElementById('fileInput').click()">
+            ➕ New
+        </button>
+        <div class="sidebar-item active">
+            📁 My Drive
+        </div>
+        <div class="sidebar-item">
+            👥 Shared with me
+        </div>
+        <div class="sidebar-item">
+            ⭐ Starred
+        </div>
+        <div class="sidebar-item">
+            🗑️ Trash
+        </div>
+        <div class="sidebar-item">
+            ☁️ Storage
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="toolbar">
+            <h3>My Drive</h3>
+            <div class="view-options">
+                <button class="view-btn active">📋</button>
+                <button class="view-btn">⚏</button>
+            </div>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <h3>Drop files here to upload</h3>
+            <p>Or click to select files</p>
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                Choose Files
+            </button>
+        </div>
+
+        <input type="file" id="fileInput" class="file-input" multiple accept="*/*">
+
+        <div class="files-container">
+            <div class="files-header">
+                Recent Files
+            </div>
+            <div id="filesList">
+                <div class="empty-state">
+                    <h3>No files yet</h3>
+                    <p>Upload your first file to get started</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">File Preview</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody">
+                <!-- File preview content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
